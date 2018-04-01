@@ -24,7 +24,7 @@
 
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-<a class="navbar-brand" href="">Barangay Malaban Blotter System</a>
+<a class="navbar-brand" href="">Barangay Malaban Offline System</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,6 +34,12 @@
           <a class="nav-link add-blotter" id="openAddModal" data-toggle="modal" data-target="#addBlotterModal" data-url="<?php echo site_url('blotters/addblotter/')?>">
             <i class="fa fa-fw fa-address-book"></i>
             <span class="nav-link-text">Add Blotter</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" id="openCreateClearance" data-toggle="modal" data-target="#createClearanceModal" data-url="<?php echo site_url('clearances/addclearance/')?>">
+            <i class="fa fa-fw fa-address-book"></i>
+            <span class="nav-link-text">Create Barangay Clearance</span>
           </a>
         </li>
       </ul>
@@ -54,27 +60,6 @@
 <div class="content-wrapper">
     <div class="container-fluid">
 <br><br>
-
-
-      <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                  <a class="btn btn-primary" href="<?php echo base_url()?>admins/logout">Logout</a>
-                  
-                </div>
-              </div>
-            </div>
-      </div>
 
       <!-- Add Blotter Modal-->
       <div class="modal fade" id="addBlotterModal" tabindex="-1" role="dialog">
@@ -101,14 +86,57 @@
                         <div class="col-md-12">
                           <textarea type="text" name="detailsTxt" class="form-control" placeholder="Details of Report"></textarea>
                         </div>
+                        <br>
+                        <div class="col-md-12">
+                          <input type="text" name="officerTxt" class="form-control" placeholder="Recording Officer Name">  
+                        </div>
                       </div>
                     </form>
                 </div>
                 <div class="modal-footer" >
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" id="btnAddCancel" type="button" data-dismiss="modal">Cancel</button>
                     <a style="color:white" class="btn btn-primary" id="btnAdd">Add</a>
                 </div>
             </div>
         </div>
       </div>
-      
+
+<!-- Create Clearance Modal-->
+<div class="modal fade" id="createClearanceModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class ="modal-header">
+        <h3>Create Barangay Clearance</h3>
+      </div>
+      <div class ="modal-body">
+        <form id="createClearanceForm" action="" method="post" class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-12">
+              <input type="text" name="applicantNameTxt" class="form-control" placeholder="Applicant's Full Name">  
+            </div>
+            <br>
+            <div class="col-md-12">
+              <textarea type="text" name="origAddressTxt" class="form-control" placeholder="Original Address of Applicant"></textarea>
+            </div>
+            <br>
+            <div class="col-md-12">
+              <input type="date" name="birthDatePicker" class="form-control">  
+            </div>
+            <br>
+            <div class="col-md-12">
+              <textarea type="text" name="currAddressTxt" class="form-control" placeholder="Current Address of Applicant"></textarea>
+            </div>
+            <br>
+            <div class="col-md-12">
+              <input type="text" name="reasonTxt" class="form-control" placeholder="Reason For Applying">  
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" >
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a style="color:white" class="btn btn-primary" id="btnCreate">Create Clearance</a>
+      </div>
+    </div>
+  </div>
+</div>
