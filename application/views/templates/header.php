@@ -30,18 +30,47 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link add-blotter" id="openAddModal" data-toggle="modal" data-target="#addBlotterModal" data-url="<?php echo site_url('blotters/addblotter/')?>">
-            <i class="fa fa-fw fa-address-book"></i>
-            <span class="nav-link-text">Add Blotter</span>
+      
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-balance-scale"></i>
+            <span class="nav-link-text">Blotters Reports</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a class="nav-link add-blotter" id="openAddModal" data-toggle="modal" data-target="#addBlotterModal" data-url="<?php echo site_url('blotters/addblotter/')?>">
+                <i class="fa fa-fw fa-address-book"></i>
+                <span class="nav-link-text">Add Blotter</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo base_url('blotters/index') ?>">
+                <i class="fa fa-fw fa-table"></i>View Blotters
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" id="openCreateClearance" data-toggle="modal" data-target="#createClearanceModal" data-url="<?php echo site_url('clearances/addclearance/')?>">
-            <i class="fa fa-fw fa-address-book"></i>
-            <span class="nav-link-text">Create Barangay Clearance</span>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Barangay Clearance</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a class="nav-link" id="openCreateClearance" data-toggle="modal" data-target="#createClearanceModal" data-url="<?php echo site_url('clearances/addclearance/')?>" data-url2="<?php echo site_url('blotters/clearancecheck/')?>">
+                <i class="fa fa-fw fa-address-book"></i>
+                  <span class="nav-link-text">Create Clearance</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo base_url('clearances/index') ?>">
+                <i class="fa fa-fw fa-table"></i>View Clearances
+              </a>
+            </li>
+          </ul>
         </li>
+
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -139,4 +168,22 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- Existing Blotters Modal -->
+<div class="modal fade" id="clearanceContinue">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class ="modal-header">
+                <h3>Existing Blotter Reports</h3>
+            </div>
+            <div class ="modal-body">
+                <p>Applicant has existing blotter reports against them. Continue?</p>
+            </div>
+            <div class="modal-footer" >
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a style="color:white" class="btn btn-primary" id="btnContinue">Continue</a>
+            </div>
+        </div>
+    </div>
 </div>

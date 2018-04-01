@@ -149,6 +149,57 @@ $(document).ready(function(){
 
     $('#btnCreate').click(function(){
         var url = $('#openCreateClearance').data('url');
+        var url2 = $('#openCreateClearance').data('url2');
+        var data = $('#createClearanceForm').serialize();
+        $.ajax({
+            url: url2,
+            data: data,
+            method: 'post',
+            dataType:'json',
+            success: function(response)
+            {
+                if(response.success)
+                {
+                    $('#clearanceContinue').modal('show');
+                }
+                else
+                {
+                    $.ajax({
+                        url: url,
+                        data: data,
+                        method: 'post',
+                        dataType: 'json',
+                        success: function()
+                        {
+                            if(response.success)
+                            {
+                                alert('Successfully created barangay clearance record');
+                                location.reload();
+                            }
+                            else
+                            {
+                                alert('An error has occurred');
+                                location.reload();
+                            }
+                        },
+                        error: function()
+                        {
+                            alert('Error creating barangay clearance');
+                            location.reload();
+                        }
+                    });
+                }
+            }, 
+            error: function ()
+            {
+                alert('Error creating barangay clearance');
+                location.reload();
+            }
+        });
+    });
+
+    $('#btnContinue').click(function(){
+        var url = $('#openCreateClearance').data('url');
         var data = $('#createClearanceForm').serialize();
         $.ajax({
             url: url,
@@ -159,18 +210,18 @@ $(document).ready(function(){
             {
                 if(response.success)
                 {
-                    alert('Successfully created new barangay clearance record');
+                    alert('Successfully created barangay clearance record');
                     location.reload();
                 }
                 else
                 {
-                    alert('error');
+                    alert('An error has occurred');
                     location.reload();
                 }
             }, 
             error: function ()
             {
-                alert('Error adding data');
+                alert('Error creating barangay clearance');
                 location.reload();
             }
         });
