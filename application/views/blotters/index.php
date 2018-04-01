@@ -10,8 +10,8 @@
                         <th>Case I.D.</th>
                         <th>Complainant</th>
                         <th>Defendant</th>
-                        <th>Case Type</th>
-                        <th>Details</th>
+                        <th>Case Title</th>
+                        <th>Case Details</th>
                         <th>STATUS</th>
                         <th>Action</th>
                     </tr>
@@ -21,8 +21,8 @@
                         <th>Case I.D.</th>
                         <th>Complainant</th>
                         <th>Defendant</th>
-                        <th>Case Type</th>
-                        <th>Details</th>
+                        <th>Case Title</th>
+                        <th>Case Details</th>
                         <th>STATUS</th>
                         <th>Action</th>
                     </tr>
@@ -85,7 +85,7 @@
                         </div>
                         <br>
                         <div class="col-md-12">
-                          Case Description<input type="text" id="caseTypeTxt" name="caseTypeTxt" class="form-control" readonly>  
+                          Case Title<input type="text" id="caseTypeTxt" name="caseTypeTxt" class="form-control" readonly>  
                         </div>
                         <br>
                         <div class="col-md-12">

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $('#btnAdd').click(function(){
         var url = $('#openAddModal').data('url');
         var data = $('#addBlotterForm').serialize();
@@ -82,6 +83,8 @@ $(document).ready(function(){
 
         $('#viewModal').find('.modal-title').text('Case I.D. ').append(id);
 
+        console.log($('#complainantNameTxt').val());
+
         $('#complainantNameTxt').val(complainant);
         $('#defendantNameTxt').val(defendant);
         $('#caseTypeTxt').val(blotter_case);
@@ -114,7 +117,6 @@ $(document).ready(function(){
                     }
                     else
                     {
-                        console.log($('#complainantNameTxt').val());
                         alert('error');
                         location.reload();
                     }
@@ -144,4 +146,34 @@ $(document).ready(function(){
         $('#detailsTxt').prop("readonly", true);
         $('#statusTxt').prop("readonly", true);
     });
+
+    $('#btnCreate').click(function(){
+        var url = $('#openCreateClearance').data('url');
+        var data = $('#createClearanceForm').serialize();
+        $.ajax({
+            url: url,
+            data: data,
+            method: 'post',
+            dataType:'json',
+            success: function(response)
+            {
+                if(response.success)
+                {
+                    alert('Successfully created new barangay clearance record');
+                    location.reload();
+                }
+                else
+                {
+                    alert('error');
+                    location.reload();
+                }
+            }, 
+            error: function ()
+            {
+                alert('Error adding data');
+                location.reload();
+            }
+        });
+    });
+
 })

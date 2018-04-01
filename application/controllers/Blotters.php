@@ -18,6 +18,7 @@
             $this->form_validation->set_rules('defendantNameTxt', 'Defendant Name', 'required');
             $this->form_validation->set_rules('caseTypeTxt', 'Case Type', 'required');
             $this->form_validation->set_rules('detailsTxt', 'Case Details', 'required');
+            $this->form_validation->set_rules('officerTxt', 'Recording Officer Name', 'required');
 
             if($this->form_validation->run())
             {
@@ -25,7 +26,7 @@
                 $defendant = $this->input->post('defendantNameTxt');
                 $blotter_case = $this->input->post('caseTypeTxt');
                 $details = $this->input->post('detailsTxt');
-                $recording_officer = 'USERNAME NG ACCOUNT DITO';
+                $recording_officer = $this->input->post('officerTxt');
 
                 $this->blotter_model->add_blotter($complainant, $defendant, $blotter_case, $details, $recording_officer);
                 $msg['success']=true;
