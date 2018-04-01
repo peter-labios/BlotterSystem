@@ -1,0 +1,119 @@
+@media (max-width: 768px) {
+	.col-sm-6 {
+	  width: 1000px !important;
+	}
+}
+#calendar {
+    width: 400px;
+    margin: 0 auto;
+    font-size: 10px;
+}
+.fc-toolbar {
+    font-size: .9em;
+}
+.fc-toolbar h2 {
+    font-size: 12px;
+    white-space: normal !important;
+}
+/* click +2 more for popup */
+.fc-more-cell a {
+    display: block;
+    width: 85%;
+    margin: 1px auto 0 auto;
+    border-radius: 3px;
+    background: grey;
+    color: transparent;
+    overflow: hidden;
+    height: 4px;
+}
+.fc-more-popover {
+    width: 100px;
+}
+.fc-view-month .fc-event, .fc-view-agendaWeek .fc-event, .fc-content {
+    font-size: 12px;
+    overflow: hidden;
+    height: 15px;
+}
+.fc-view-agendaWeek .fc-event-vert {
+    font-size: 0;
+    overflow: hidden;
+    width: 2px !important;
+}
+.fc-agenda-axis {
+    width: 20px !important;
+    font-size: .7em;
+}
+
+.fc-button-content {
+    padding: 0;
+}
+.containerbis{
+	background-color:white;
+	height:800px;
+	padding: 20px;
+}
+.containernews{
+	background-color:white;
+	height:1500px;
+	padding: 20px;
+}
+.containertop{
+	min-width:100px;
+	height:200px;
+}
+.cardlink{
+	color: white;
+}
+.cardlink:link{
+	color: white;
+}
+.cardlink:hover{
+	color: white;
+	text-decoration: underline;
+}
+.cardlink:visited{
+	color:white;
+}
+.cardlink:active{
+	color: white;
+}
+hr{
+	border-color:grey;
+}
+.list-group-item{
+	background-color: #0077f7;
+}
+.list-group-item active{
+	background-color: #0077f7;
+}
+.carousel-caption {
+    left:0;
+	right:0;
+	bottom:0;
+	text-align:left;
+	padding:10px;
+	background:rgba(0,0,0,0.6);
+	text-shadow:none;
+}
+
+#myCarousel .list-group {
+	position:absolute;
+	top:0;
+	right:0;
+}
+#myCarousel .list-group-item {
+	border-radius:0px;
+	cursor:pointer;
+}
+#myCarousel .list-group .active {
+	background-color:#eee;	
+}
+
+@media (min-width: 992px) { 
+	#myCarousel {padding-right:33.3333%;}
+	#myCarousel .carousel-controls {display:none;} 	
+}
+@media (max-width: 991px) { 
+	.carousel-caption p,
+	#myCarousel .list-group {display:none;} 
+}
