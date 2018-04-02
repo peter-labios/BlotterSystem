@@ -1,7 +1,7 @@
 <?php
     class Blotter_Model extends CI_Model
     {
-        public function __contruct()
+        public function __construct()
         {
             $this->load->database();
         }
@@ -14,9 +14,6 @@
                 $query = $this->db->get('blotters');
                 return $query->result_array();
             }
-
-            $query = $this->db->get_where('blotters', array('id'=>$id));
-            return $query->row_array();
         }
 
         public function delete_blotter($id)
@@ -49,6 +46,13 @@
             ];
             $this->db->where('id', $id);
             $this->db->update('blotters', $data);
+        }
+
+        public function clearance_check($name)
+        {
+            $this->db->like('defendant',$name);
+            $query = $this->db->get('blotters');
+            return $query->result_array();
         }
     }
 ?>

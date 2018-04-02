@@ -49,12 +49,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['barangay/save']='bgyclearances/save_image';
+
+$route['clearances'] = 'clearances/addclearance';
+$route['clearances'] = 'clearances/index';
+
 $route['barangay/clearance']='bgyclearances/index';
 $route['blotters'] = 'blotters/editblotter';
 $route['blotters'] = 'blotters/deleteblotter';
 $route['blotters'] = 'blotters/addblotter';
 $route['blotters'] = 'blotters/index';
+
 $route['default_controller'] = 'blotters/index';
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';
