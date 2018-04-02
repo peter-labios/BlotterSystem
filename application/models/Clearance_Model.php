@@ -13,6 +13,9 @@
                 $this->db->order_by('created_at','desc');
                 $query = $this->db->get('clearances');
                 return $query->result_array();
+            }else{
+                $query=$this->db->get_where('clearances',array('id'=>$id));
+                return $query->row_array();
             }
         }
 

@@ -28,7 +28,8 @@
                         <td style="width: 15%"><?php echo $clearance['applicant_name']; ?></td>
                         <td style="width: 15%"><?php echo $clearance['created_at']; ?></td>
                         <td style="width: 15%" align="center">
-                            <button class="mt-1 ml-1 mb-1 btn btn-success btn-sm view-profile" id="openEditModal"><i class="fa fa-fw fa-user-o"></i>Print</button>
+                            <a class="mt-1 ml-1 mb-1 btn btn-success btn-sm" href="<?php echo base_url('clearances/generateClearance/'.$clearance['id'])?>"><i class="fa fa-fw fa-user-o"></i>Generate</a>
+                           
                         </td>
                         </tr>
                     <?php endforeach; ?>

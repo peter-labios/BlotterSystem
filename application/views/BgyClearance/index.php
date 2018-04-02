@@ -1,3 +1,4 @@
+
 <?php
     require_once('vendor/autoload.php');
     echo "<h1>yes</h1>";
@@ -8,11 +9,11 @@
 
     $phpword = new \PhpOffice\PhpWord\TemplateProcessor($file);
 
-    $phpword->setValue('{$full name}',$name);
-    $phpword->setValue('{$origaddress}',$from);
-    $phpword->setValue('{birthdate}',$bday);
-    $phpword->setValue('{address}',$address);
-    $phpword->setValue('{reason}',$reason);       
+    $phpword->setValue('{$full name}',$clearance['applicant_name']);
+    $phpword->setValue('{$origaddress}',$clearance['orig_address']);
+    $phpword->setValue('{birthdate}',$clearance['birth_date']);
+    $phpword->setValue('{address}',$clearance['curr_address']);
+    $phpword->setValue('{reason}',$clearance['reason']);       
     $phpword->setValue('{thedatetoday}',$date);        
 
     $phpword->saveAs('edited.docx');
